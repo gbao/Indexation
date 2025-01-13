@@ -547,9 +547,9 @@ fig = go.Figure(go.Waterfall(
     y=[
         total_offer_price_per_turbine,
         total_steel_adjustment,
-        total_bunker_adjustment,
+        total_bunker_adjustment / No_of_Turbine,
         total_material_adjustment,
-        total_cpi_adjustment,
+        total_cpi_adjustment / No_of_Turbine,
         total_price_offer_after_adjustmet
     ],
     connector={"line": {"color": "rgb(63, 63, 63)"}},
