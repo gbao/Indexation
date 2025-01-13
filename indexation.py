@@ -447,15 +447,15 @@ total_offer_price_per_turbine = total_offer_price / No_of_Turbine
 total_offer_price_per_MW = total_offer_price_per_turbine / turbine_mw
 
 total_steel_adjustment = calculate_total_steel_adjustment(model_technical_data,model_price_data,model_adjuster_data,model_exchange_data,target_currency)
-st.write("Total Steel Adjustement is {total_steel_adjusment}")
+st.write("Total Steel Adjustement is {total_steel_adjusment:,.2f}")
 total_bunker_adjustment = calculate_total_bunker_adjustment(model_technical_data,model_price_data,model_adjuster_data,model_exchange_data,target_currency)
-st.write("Total Bunker Adjustement is {total_bunker_adjustment}")
+st.write("Total Bunker Adjustement is {total_bunker_adjustment:,.2f}")
 total_material_adjustment = calculate_total_material_adjustment(model_technical_data, model_price_data,model_adjuster_data,model_exchange_data,target_currency)
-st.write("Total Bunker Adjustement is {total_material_adjustment}")
+st.write("Total Bunker Adjustement is {total_material_adjustment:,.2f}")
 total_cpi_adjustment = calculate_total_cpi_adjustment(model_technical_data, model_price_offer_data, model_adjuster_data,model_macro_data,model_exchange_data,target_currency)
-st.write("Total Bunker Adjustement is {total_cpi_adjustment}")
+st.write("Total Bunker Adjustement is {total_cpi_adjustment:,.2f}")
 total_value_adjustment = total_cpi_adjustment + total_bunker_adjustment +  (total_material_adjustment + total_steel_adjustment ) * No_of_Turbine
-st.write("Total Bunker Adjustement is {total_value_adjustment}")
+st.write("Total Bunker Adjustement is {total_value_adjustment:,.2f}")
 
 total_price_offer_after_adjustmet = total_value_adjustment + total_offer_price
 total_price_offer_after_adjustmet_per_turbine = total_price_offer_after_adjustmet / No_of_Turbine
