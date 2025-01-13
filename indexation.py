@@ -572,7 +572,6 @@ values = [
     total_offer_price_per_MW + total_steel_adjustment / turbine_mw + total_bunker_adjustment / No_of_Turbine / turbine_mw,
     total_offer_price_per_MW + total_steel_adjustment / turbine_mw + total_bunker_adjustment / No_of_Turbine / turbine_mw + total_material_adjustment / turbine_mw,
     total_offer_price_per_MW + total_steel_adjustment / turbine_mw + total_bunker_adjustment / No_of_Turbine / turbine_mw + total_material_adjustment / turbine_mw + total_cpi_adjustment / No_of_Turbine / turbine_mw,
-    total_price_offer_after_adjustmet_per_MW,
 ]
 
 percentages = [
@@ -581,7 +580,6 @@ percentages = [
     (values[2] - values[0]) / values[0] * 100,
     (values[3] - values[0]) / values[0] * 100,
     (values[4] - values[0]) / values[0] * 100,
-    (values[5] - values[0]) / values[0] * 100,
 ]
 
 # Create the line chart
