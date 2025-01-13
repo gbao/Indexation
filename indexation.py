@@ -528,3 +528,32 @@ with col2:
         """,
         unsafe_allow_html=True,
     )
+
+# Waterfall indexation 
+st.write(f"##### Indexation waterfall in {target_currency}")
+# Create a waterfall chart
+fig = go.Figure(go.Waterfall(
+    name="Price",
+    orientation="v",
+    measure=["absolute", "relative", "relative", "relative", "relative", "total"],
+    x=["Base Offer Price", "Steel Adjustment", "Bunker Adjustment", "Material Adjustment", "CPI Adjustment", "Total Offer Price After Adjustment"],
+    textposition="outside",
+    y=[
+        total_offer_price_per_turbine,
+        total_steel_adjustment,
+        total_bunker_adjustment,
+        total_material_adjustment,
+        total_cpi_adjustment,
+        total_price_offer_after_adjustmet_per_turbine
+    ],
+    connector={"line": {"color": "rgb(63, 63, 63)"}},
+))
+
+# Update layout for the waterfall chart
+fig.update_layout(
+    title="Waterfall Chart of Offer Price Per Turbine Adjustments",
+    showlegend=False
+)
+
+# Display the waterfall chart in Streamlit
+st.plotly_chart(fig)
