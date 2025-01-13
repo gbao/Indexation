@@ -563,3 +563,27 @@ fig.update_layout(
 
 # Display the waterfall chart in Streamlit
 st.plotly_chart(fig)
+
+
+categories = ["Base Offer Price", "Steel Adjustment", "Bunker Adjustment", "Material Adjustment", "CPI Adjustment", "Total Offer Price"]
+values = [
+    total_offer_price_per_MW,
+    total_offer_price_per_MW + total_steel_adjustment,
+    total_offer_price_per_MW + total_steel_adjustment + total_bunker_adjustment / No_of_Turbine,
+    total_offer_price_per_MW + total_steel_adjustment + total_bunker_adjustment / No_of_Turbine + total_material_adjustment,
+    total_offer_price_per_MW + total_steel_adjustment + total_bunker_adjustment / No_of_Turbine + total_material_adjustment + total_cpi_adjustment / No_of_Turbine,
+    total_price_offer_after_adjustmet_per_MW,
+]
+
+# Create the line chart
+fig = go.Figure(data=go.Scatter(x=categories, y=values, mode="lines+markers"))
+
+# Update layout
+fig.update_layout(
+    title="Line Chart of Offer Price Adjustments",
+    xaxis_title="Adjustments",
+    yaxis_title=f"Value ({target_currency})",
+)
+
+# Display chart in Streamlit
+st.plotly_chart(fig)
