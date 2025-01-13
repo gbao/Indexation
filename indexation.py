@@ -9,7 +9,37 @@ from model import ModelTechnicalInputs
 from model import ModelMacroInputs
 from function import convert_price_to_currency, calculate_total_steel_adjustment, calculate_total_bunker_adjustment, calculate_total_material_adjustment,calculate_total_cpi_adjustment
 
+_, exp_col, _ = st.columns([1,3,1])
+with exp_col:
+    with st.expander("**📖 How to Use This Indexation Calculation Sheet**"):
+        st.markdown("""
+                    However you like! 🤷🏻
 
+                    But here's my recommendation:
+
+                    Get hold of your project detail information first, it is !!important parameter. Therefore, please fill in first Turbine Configuration, Number of Turbine and the Unit of computation
+                    
+                    Now, let's say you got an offer that comprises of multiple currency value. The app currently supports USD, EUR and KRW. So input the breakdown offer into the box
+                
+                    Then enjoy the rest of the app ❄️, adjust as many as sliders you want to test different scenario 🎈... 
+                      
+
+            
+                    """)
+        
+        st.info("""
+                This app is not applicable for any real turbine in the market, let's just use it for testing scenario only (which is still fantastic by the way!). 
+                    For a comprehensive reference of objects and methods, of course contact Bao for more info :) .
+                """)
+        
+        st.markdown("""
+                    If you happen to spot any errors or have suggestions for improving the descriptions or tips, please don't hesitate to reach out to me directly  Your feedback is invaluable—and relied upon—in keeping this guide accurate and useful.
+
+                    👈 Don't forget to check the sidebar for additional info!
+
+                    Now, let' use the app 
+
+                    """)
 
 
 # Sidebar Inputs
