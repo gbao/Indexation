@@ -568,10 +568,10 @@ st.plotly_chart(fig)
 categories = ["Base Offer Price", "Steel Adjustment", "Bunker Adjustment", "Material Adjustment", "CPI Adjustment", "Total Offer Price"]
 values = [
     total_offer_price_per_MW,
-    total_offer_price_per_MW + total_steel_adjustment,
-    total_offer_price_per_MW + total_steel_adjustment + total_bunker_adjustment / No_of_Turbine,
-    total_offer_price_per_MW + total_steel_adjustment + total_bunker_adjustment / No_of_Turbine + total_material_adjustment,
-    total_offer_price_per_MW + total_steel_adjustment + total_bunker_adjustment / No_of_Turbine + total_material_adjustment + total_cpi_adjustment / No_of_Turbine,
+    total_offer_price_per_MW + total_steel_adjustment / turbine_mw,
+    total_offer_price_per_MW + total_steel_adjustment / turbine_mw + total_bunker_adjustment / No_of_Turbine / turbine_mw,
+    total_offer_price_per_MW + total_steel_adjustment / turbine_mw + total_bunker_adjustment / No_of_Turbine / turbine_mw + total_material_adjustment / turbine_mw,
+    total_offer_price_per_MW + total_steel_adjustment / turbine_mw + total_bunker_adjustment / No_of_Turbine / turbine_mw + total_material_adjustment / turbine_mw + total_cpi_adjustment / No_of_Turbine / turbine_mw,
     total_price_offer_after_adjustmet_per_MW,
 ]
 
