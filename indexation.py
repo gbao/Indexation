@@ -535,35 +535,6 @@ with col2:
         unsafe_allow_html=True,
     )
 
-# Waterfall indexation 
-st.write(f"##### Indexation waterfall in {target_currency}")
-# Create a waterfall chart
-fig = go.Figure(go.Waterfall(
-    name="Price",
-    orientation="v",
-    measure=["absolute", "relative", "relative", "relative", "relative", "total"],
-    x=["Base Offer Price", "Steel Adjustment", "Bunker Adjustment", "Material Adjustment", "CPI Adjustment", "Total Offer Price After Adjustment"],
-    textposition="outside",
-    y=[
-        total_offer_price_per_turbine,
-        total_steel_adjustment,
-        total_bunker_adjustment / No_of_Turbine,
-        total_material_adjustment,
-        total_cpi_adjustment / No_of_Turbine,
-        total_price_offer_after_adjustmet
-    ],
-    connector={"line": {"color": "rgb(63, 63, 63)"}},
-))
-
-# Update layout for the waterfall chart
-fig.update_layout(
-    title="Waterfall Chart of Offer Price Per Turbine Adjustments",
-    showlegend=False
-)
-
-# Display the waterfall chart in Streamlit
-st.plotly_chart(fig)
-
 
 categories = ["Base Offer Price", "Steel Adjustment", "Bunker Adjustment", "Material Adjustment", "CPI Adjustment", "Total Offer Price"]
 values = [
@@ -612,7 +583,7 @@ for i, percentage in enumerate(percentages):
 fig.update_layout(
     title="Line Chart of Offer Price Adjustments with Percentages",
     xaxis_title="Adjustments",
-    yaxis_title=f"Value ({target_currency})",
+    yaxis_title=f"Offer per MW ({target_currency})",
 )
 
 # Display chart in Streamlit
