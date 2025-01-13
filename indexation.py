@@ -575,12 +575,44 @@ values = [
     total_price_offer_after_adjustmet_per_MW,
 ]
 
+percentages = [
+    0,  # Base offer price has no percentage change
+    (total_steel_adjustment / turbine_mw) / total_offer_price_per_MW * 100,
+    (total_bunker_adjustment / No_of_Turbine / turbine_mw) / total_offer_price_per_MW * 100,
+    (total_material_adjustment / turbine_mw) / total_offer_price_per_MW * 100,
+    (total_cpi_adjustment / No_of_Turbine / turbine_mw) / total_offer_price_per_MW * 100,
+    (total_price_offer_after_adjustmet_per_MW - total_offer_price_per_MW) / total_offer_price_per_MW * 100,
+]
+
 # Create the line chart
-fig = go.Figure(data=go.Scatter(x=categories, y=values, mode="lines+markers"))
+fig = go.Figure()
+
+# Add line with markers
+fig.add_trace(go.Scatter(
+    x=categories,
+    y=values,
+    mode="lines+markers",
+    name="Offer Price Adjustments",
+    text=[f"{value:,.2f} ({percentage:.2f}%)" for value, percentage in zip(values, percentages)],
+    hovertemplate="%{text}<extra></extra>"
+))
+
+# Add annotations for percentages
+for i, percentage in enumerate(percentages):
+    if i > 0:  # Skip the base price since it has no percentage change
+        fig.add_annotation(
+            x=categories[i],
+            y=values[i],
+            text=f"+{percentage:.2f}%",
+            showarrow=True,
+            arrowhead=2,
+            ax=0,
+            ay=-30  # Adjust the position of the annotation
+        )
 
 # Update layout
 fig.update_layout(
-    title="Line Chart of Offer Price Adjustments",
+    title="Line Chart of Offer Price Adjustments with Percentages",
     xaxis_title="Adjustments",
     yaxis_title=f"Value ({target_currency})",
 )
