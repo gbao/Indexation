@@ -602,7 +602,7 @@ for i, percentage in enumerate(percentages):
         fig.add_annotation(
             x=categories[i],
             y=values[i],
-            text=f"+{percentage:.2f}%",
+            text=f"{percentage:.2f}%",
             showarrow=True,
             arrowhead=2,
             ax=0,
