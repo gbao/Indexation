@@ -165,7 +165,7 @@ st.sidebar.header("Adjuster Inputs")
 # Create sliders for adjuster values in the sidebar
 weight_flange_adjuster = st.sidebar.slider(
     "Weight Flange (%)",
-    min_value=0,
+    min_value=-25,
     max_value=100,
     value=7,  # Default value
     step=1
@@ -173,7 +173,7 @@ weight_flange_adjuster = st.sidebar.slider(
 
 weight_shell_adjuster = st.sidebar.slider(
     "Weight Shell (%)",
-    min_value=0,
+    min_value=-25,
     max_value=100,
     value=7,  # Default value
     step=1
@@ -181,7 +181,7 @@ weight_shell_adjuster = st.sidebar.slider(
 
 weight_bunker_adjuster = st.sidebar.slider(
     "Weight Bunker (%)",
-    min_value=0,
+    min_value=-100,
     max_value=100,
     value=7,  # Default value
     step=1
@@ -189,7 +189,7 @@ weight_bunker_adjuster = st.sidebar.slider(
 
 steel_price_adjuster = st.sidebar.slider(
     "Steel Price (%)",
-    min_value=0,
+    min_value=-50,
     max_value=100,
     value=7,  # Default value
     step=1
@@ -197,7 +197,7 @@ steel_price_adjuster = st.sidebar.slider(
 
 castiron_price_adjuster = st.sidebar.slider(
     "CastIron Price (%)",
-    min_value=0,
+    min_value=-50,
     max_value=100,
     value=7,  # Default value
     step=1
@@ -205,7 +205,7 @@ castiron_price_adjuster = st.sidebar.slider(
 
 resin_price_adjuster = st.sidebar.slider(
     "Resin Price (%)",
-    min_value=0,
+    min_value=-50,
     max_value=100,
     value=7,  # Default value
     step=1
@@ -213,7 +213,7 @@ resin_price_adjuster = st.sidebar.slider(
 
 HotRolledCoils_price_adjuster = st.sidebar.slider(
     "Hot Rolled Coils Price (%)",
-    min_value=0,
+    min_value=-50,
     max_value=100,
     value=2,  # Default value
     step=1
@@ -221,7 +221,7 @@ HotRolledCoils_price_adjuster = st.sidebar.slider(
 
 bunker_price_adjuster = st.sidebar.slider(
     "Bunker Price (%)",
-    min_value=0,
+    min_value=-50,
     max_value=100,
     value=2,  # Default value
     step=1
@@ -229,7 +229,7 @@ bunker_price_adjuster = st.sidebar.slider(
 
 cpi_eur_adjuster = st.sidebar.slider(
     "CPI EUR (%)",
-    min_value=0,
+    min_value=-50,
     max_value=100,
     value=3,  # Default value
     step=1
@@ -237,7 +237,7 @@ cpi_eur_adjuster = st.sidebar.slider(
 
 cpi_us_adjuster = st.sidebar.slider(
     "CPI US (%)",
-    min_value=0,
+    min_value=-50,
     max_value=100,
     value=5,  # Default value
     step=1
